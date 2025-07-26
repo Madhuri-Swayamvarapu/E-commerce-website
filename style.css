@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(images/back.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+
+}
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 18px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+    }
+    .navbar a:last-child {
+    color: #090909;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 5px;
+     
+    }
+
+    #searchInput {
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .btn1 {
+  background-color: #8B4513; /* SaddleBrown */
+  color: white;
+  border: 2px solid #5C3317; /* Darker brown border */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+    
+
+    .btn1:hover {
+     background-color: #ca744c; /* Lighter brown */
+  transform: scale(1.05);
+    }
+    .heading
+    {
+      color: white;
+      font-size: medium;
+      text-align: center;
+    }
+
+
+.heading-section {
+  max-width: 500px;
+  
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left:100px;
+  margin-top:110px;
+}
+
+.heading-section h2 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.heading-section p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: #fff;
+}
+.btn2 {
+  background-color: #8B4513; /* SaddleBrown */
+  color: white;
+  border: 2px solid #5C3317; /* Darker brown border */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn2:hover {
+  background-color: #ca744c; /* Lighter brown */
+  transform: scale(1.05);
+}
+

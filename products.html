@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Cosmetic - Products</title>
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="all">All Categories</option>
+      <option value="Skincare">Skincare</option>
+      <option value="Makeup">Makeup</option>
+      <option value="Haircare">Haircare</option>
+    </select>
+  </header>
+
+  <main id="product-list" class="product-grid"></main>
+
+  <script>
+    const products = [
+      {
+        name: "Hydrating Serum",
+        category: "Skincare",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/serum.jpeg"
+
+      },
+      {
+        name: "Matte Lipstick",
+        category: "Makeup",
+        price: "₹499",
+        rating: "⭐️⭐️⭐️⭐️⭐️",
+        image: "images/lipstick.png",
+      },
+      {
+        name: "Face Moisturizer",
+        category: "Skincare",
+        price: "₹599",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/moist3.jpeg",
+      },
+      {
+        name: "Hair Serum",
+        category: "Haircare",
+        price: "₹699",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/hair.jpg"
+      },
+        {
+        name: "EyeShadow Palatte ",
+        category: "Makeup",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/ey3.jpeg"
+
+      },
+      {
+        name: "Eyeliner Pen",
+        category: "Makeup",
+        price: "₹299",
+        rating: "⭐️⭐️⭐️",
+        image:"images/eyeliner.jpg"
+      },
+      {
+        name: "EyeShadow Palatte ",
+        category: "Makeup",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/ey2.jpeg"
+
+      },
+      {
+        name: "Matte Lipstick",
+        category: "Makeup",
+        price: "₹499",
+        rating: "⭐️⭐️⭐️⭐️⭐️",
+        image: "images/lipstick.png",
+      },
+      {
+        name: "Face Moisturizer",
+        category: "Skincare",
+        price: "₹599",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/moist2.jpg",
+      },
+        {
+        name: "EyeShadow Palatte ",
+        category: "Makeup",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/ey1.jpeg"
+
+      },
+      {
+        name: "Hair Serum",
+        category: "Haircare",
+        price: "₹699",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/hair3.jpg"
+      },
+      {
+        name: "Eyeliner Pen",
+        category: "Makeup",
+        price: "₹299",
+        rating: "⭐️⭐️⭐️",
+        image:"images/eyeliner.jpg"
+      },
+      {
+        name: "Hydrating Serum",
+        category: "Skincare",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/serum1.jpg"
+
+      },
+      {
+        name: "Matte Lipstick",
+        category: "Makeup",
+        price: "₹499",
+        rating: "⭐️⭐️⭐️⭐️⭐️",
+        image: "images/lip1.jpeg",
+      },
+      {
+        name: "Face Moisturizer",
+        category: "Skincare",
+        price: "₹599",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/moist1.jpeg",
+      },
+      {
+        name: "Hair Serum",
+        category: "Haircare",
+        price: "₹699",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/hair3.jpg"
+      },
+      {
+        name: "Eyeliner Pen",
+        category: "Makeup",
+        price: "₹299",
+        rating: "⭐️⭐️⭐️",
+        image:"images/lip2.jpeg"
+      },
+      {
+        name: "Hydrating Serum",
+        category: "Skincare",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/serum2.jpg"
+
+      },
+      {
+        name: "Matte Lipstick",
+        category: "Makeup",
+        price: "₹499",
+        rating: "⭐️⭐️⭐️⭐️⭐️",
+        image: "images/lip3.jpeg",
+      },
+      {
+        name: "Face Moisturizer",
+        category: "Skincare",
+        price: "₹599",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/moisturizer.jpeg",
+      },
+      {
+        name: "Hair Serum",
+        category: "Haircare",
+        price: "₹699",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/hair1.png"
+      },
+      {
+        name: "Eyeliner Pen",
+        category: "Makeup",
+        price: "₹299",
+        rating: "⭐️⭐️⭐️",
+        image:"images/lip4.jpeg"
+      },
+        {
+        name: "Hydrating Serum",
+        category: "Skincare",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/serum3.jpg"
+
+      },
+        {
+        name: "Hydrating Serum",
+        category: "Skincare",
+        price: "₹799",
+        rating: "⭐️⭐️⭐️⭐️",
+        image: "images/serum4.jpeg"
+
+      },
+    ];
+
+    function renderProducts(list) {
+      const container = document.getElementById("product-list");
+      container.innerHTML = "";
+      list.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <h3>${product.name}</h3>
+          <p>Category: ${product.category}</p>
+          <p>Price: ${product.price}</p>
+          <p>Rating: ${product.rating}</p>
+          <button onclick="addToCart('${product.name}')">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+function addToCart(productName) {
+  const product = products.find(p => p.name === productName);
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(`✅ "${productName}" has been added to your cart!`);
+}
+
+    function filterProducts() {
+      const selected = document.getElementById("categoryFilter").value;
+      if (selected === "all") {
+        renderProducts(products);
+      } else {
+        const filtered = products.filter(p => p.category === selected);
+        renderProducts(filtered);
+      }
+    }
+
+    // Initial render
+    renderProducts(products);
+  </script>
+</body>
+</html>

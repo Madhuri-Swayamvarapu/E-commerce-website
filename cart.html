@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cosmetic - Cart</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-item {
+      border: 1px solid #ccc;
+      margin: 10px auto;
+      padding: 15px;
+      background: #fff;
+      display: flex;
+      gap: 15px;
+      max-width: 700px;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .cart-item img {
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    #order-section {
+      max-width: 700px;
+      margin: 40px auto 0;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    #order-section h2 {
+      margin-bottom: 20px;
+    }
+
+    #order-section input,
+    #order-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      font-size: 16px;
+    }
+
+    #order-section button {
+      background-color: black;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #success-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="cart-container"></div>
+
+  <div id="order-section">
+    <h2>Enter your details to place the order</h2>
+    <input type="text" id="name" placeholder="Your Name" required />
+    <textarea id="address" placeholder="Delivery Address" rows="3" required></textarea>
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <button onclick="placeOrder()">Place Order</button>
+    <p id="success-message"></p>
+  </div>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.getElementById("cart-container");
+
+    if (cartItems.length === 0) {
+      container.innerHTML = "<p>Your cart is empty 🛒</p>";
+      document.getElementById("order-section").style.display = "none";
+    } else {
+      cartItems.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="details">
+            <h3>${item.name}</h3>
+            <p>Price: ${item.price}</p>
+            <p>Rating: ${item.rating}</p>
+            <p>Category: ${item.category}</p>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function placeOrder() {
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("success-message");
+
+  if (!name || !address || !phone) {
+    alert("Please fill in all the details.");
+    return;
+  }
+
+  // Clear cart and show message
+  localStorage.removeItem("cart");
+  document.getElementById("cart-container").innerHTML = "";
+  document.getElementById("order-section").style.display = "none";
+
+  // Show popup
+  alert("✅ Order Placed Successfully!");
+
+  // Show on the screen
+  message.textContent = "✅ Order Placed Successfully!";
+
+  // Log in the console
+  document.write("Order Placed Successfully!");
+}
+
+  </script>
+</body>
+</html>
