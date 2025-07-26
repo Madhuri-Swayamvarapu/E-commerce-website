@@ -1,4 +1,4 @@
-# 💋 My Cosmetic – Makeup Store
+# My Cosmetic – Makeup Store
 
 Welcome to **My Cosmetic**, a stylish and user-friendly online store dedicated to a wide range of makeup products. Whether you're looking for foundation, lipstick, eyeshadow, or skincare essentials, we've got you covered with a smooth shopping experience.
 
